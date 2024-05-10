@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://localhost:5555/books")
+      .get("http://localhost:5555/books")
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
@@ -66,7 +66,7 @@ const Home = () => {
                 </td>
                 <td className="border border-slate-700 rounded-md text-center">
                   <div className="flex justify-center gap-x-4">
-                    <Link to={`/books/${book._id}`}>
+                    <Link to={`/books/details/${book._id}`}>
                       <BsInfoCircle className="text-green-800 text-2xl" />
                     </Link>
                     <Link to={`/books/edit/${book._id}`}>
