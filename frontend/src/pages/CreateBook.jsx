@@ -1,7 +1,7 @@
 import React from "react";
 
 const CreateBook = () => {
-  return <div></div>;
+  return <div>Create</div>;
 };
 
 export default CreateBook;
