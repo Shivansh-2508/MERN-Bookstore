@@ -8,6 +8,9 @@ import { MdOutlineAddBox } from "react-icons/md";
 import BooksCards from "../components/home/BooksCards";
 import BooksTable from "../components/home/BooksTable";
 
+//this is the ui for the home page
+//it displays the books in a table or card format
+
 const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
