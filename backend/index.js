@@ -1,43 +1,30 @@
-import express from 'express';
-import { PORT, mongoDBURL } from './config.js';
-import mongoose from 'mongoose';
-import booksRoute from './routes/booksRoute.js';
-import cors from 'cors';
+import express from "express";
+import { PORT, mongoDBURL } from "./config.js";
+import mongoose from "mongoose";
+import booksRoute from "./routes/booksRoute.js";
+import cors from "cors";
 
-const app= express();
+const app = express();
 
 app.use(express.json());
 
-app.use(
-     cors({
-       origin: 'http://localhost:3000',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
-  })
- );
+app.use(cors());
 
-app.get('/', (request, response) => {
-    console.log(request);
-    return response.status(234).send('Done scenes');
-  });
+app.get("/", (request, response) => {
+  console.log(request);
+  return response.status(234).send("Done scenes");
+});
 
-app.use('/books',booksRoute);
+app.use("/books", booksRoute);
 
-mongoose.connect(mongoDBURL)
-    .then(() => {       
-      console.log('App connected to database');
-       app.listen(PORT, () => {
-        console.log(PORT);
+mongoose
+  .connect(mongoDBURL)
+  .then(() => {
+    console.log("App connected to database");
+    app.listen(PORT, () => {
+      console.log(PORT);
     });
-     })
-     .catch((error) => {
+  })
+  .catch((error) => {
     console.log(error);
   });
-
-
-
-
-
-
-
-
