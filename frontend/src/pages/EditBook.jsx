@@ -15,7 +15,7 @@ const EditBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`https://mern-bookstore-vmmp.onrender.com/books/${id}`)
       .then((response) => {
         const book = response.data.data;
         setTitle(book.title);
@@ -38,7 +38,7 @@ const EditBook = () => {
     };
 
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`https://mern-bookstore-vmmp.onrender.com/books/${id}`, data)
       .then((response) => {
         setLoading(false);
         navigate("/");

@@ -20,7 +20,7 @@ const CreateBook = () => {
     };
 
     axios
-      .post("http://localhost:5555/books", data)
+      .post("https://mern-bookstore-vmmp.onrender.com/books", data)
       .then((response) => {
         setLoading(false);
         navigate("/"); // Navigate to books list after successful save
